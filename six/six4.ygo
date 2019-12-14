@@ -4,22 +4,23 @@ m;3;Crusadia Leonis;3;beast;earth
 m;3;Crusadia Arboria;3;warrior;water
 m;3;Crusadia Reclusia;3;spellcaster;fire
 m;3;Ranryu;4;dragon;wind
-m;1;Jigabyte;4;reptile;water
--m;1;nefarious;4;beast;dark
--m;1;inari fire;4;pyro;fire
+m;2;Jigabyte;4;reptile;water
+m;2;nefarious;4;beast;dark
+m;2;inari fire;4;pyro;fire
 m;1;destrudo;7;dragon;dark
 m;1;black dragon;4;dragon;dark
 m;1;white dragon;4;dragon;light
-m;2;rokket tracer;4;dragon;dark
-m;1;thrasher;4;warrior;light
+m;1;rokket tracer;4;dragon;dark
 m;1;REDMD;10;dragon;dark
 s;3;waterfront;field
-s;1;ravine;field
 s;1;terraforming;normal
 s;3;quik launch;quickplay
 s;1;rota;normal
 s;1;monster reborn;normal
 s;1;world legacy succession;normal
 s;1;world legacy guardragon;continous
-s;1;set rotation;quickplay
+-s;1;set rotation;quickplay
+-s;1;ravine;field
+-m;1;thrasher;4;warrior;light
+m;1;rokket tracer;4;dragon;dark
 b;2

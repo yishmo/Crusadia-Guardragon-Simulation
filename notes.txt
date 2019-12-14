@@ -1,0 +1,252 @@
+2 rokket tracers vs 1, around 15x more likely for the quick launch to fail, however playing extender of a tracer increases consistency from 89.2 - 89.7
+40 vs 41 vs 42 (extra cards being extenders),  89.1%combo, 77.5%waterfront,
+                                               89.0%combo, 76.6%waterfront, 
+                                               88.9%combo, 75.7%waterfront.
+
+round 4 200, 200
+
+[('./nine/nine5.ygo', 754),
+('./ten/ten4.ygo', 685),
+('./ten/ten2.ygo', 622),
+('./eleven/eleven2.ygo', 581),
+('./nine/nine3.ygo', 573),
+('./eight/eight5.ygo', 567),
+
+('./nine/nine2.ygo', 397),
+('./seven/seven5.ygo', 364),
+('./five/five5.ygo', 350),
+('./eight/eight3.ygo', 317),
+('./twelve/twelve1.ygo', 290)]
+
+round 3 100, 100
+[('./ten/ten4.ygo', 1728),
+('./nine/nine5.ygo', 1720),
+('./ten/ten2.ygo', 1629),
+('./eleven/eleven2.ygo', 1605),
+('./nine/nine3.ygo', 1543),
+('./eight/eight5.ygo', 1498),
+('./twelve/twelve1.ygo', 1223),
+('./seven/seven5.ygo', 1139),
+('./nine/nine2.ygo', 1117),
+('./eight/eight3.ygo', 1085),
+('./five/five5.ygo', 1068),
+
+('./eight/eight2.ygo', 1018),
+('./ten/ten1.ygo', 931),
+('./seven/seven2.ygo', 782),
+('./nine/nine1.ygo', 766),
+('./ten/ten7.ygo', 691),
+('./five/five2.ygo', 672),
+('./eleven/eleven5.ygo', 660),
+('./six/six5.ygo', 602),
+('./nine/nine8.ygo', 587),
+('./four/four5.ygo', 531), 
+('./eleven/eleven3.ygo', 505)]
+
+round 2 50, 50
+[('./nine/nine5.ygo', 3525),
+('./ten/ten4.ygo', 3395),
+('./ten/ten2.ygo', 3364),
+('./eleven/eleven2.ygo', 3348),
+('./eight/eight5.ygo', 3227),
+('./nine/nine3.ygo', 3163),
+('./twelve/twelve1.ygo', 2925),
+('./five/five5.ygo', 2758),
+('./seven/seven5.ygo', 2709),
+('./nine/nine2.ygo', 2683),
+('./eight/eight2.ygo', 2587),
+('./eight/eight3.ygo', 2554),
+('./ten/ten1.ygo', 2470),
+('./eleven/eleven5.ygo', 2432),
+('./nine/nine1.ygo', 2429),
+('./seven/seven2.ygo', 2405),
+('./five/five2.ygo', 2351),
+('./six/six5.ygo', 2339),
+('./eleven/eleven3.ygo', 2266),
+('./ten/ten7.ygo', 2259),
+('./four/four5.ygo', 2230),
+('./nine/nine8.ygo', 2203),
+
+('./ten/ten5.ygo', 2189),
+('./four/four2.ygo', 2102),
+('./seven/seven3.ygo', 2068),
+('./eight/eight1.ygo', 2026),
+('./eleven/eleven1.ygo', 1998),
+('./five/five3.ygo', 1990),
+('./seven/seven1.ygo', 1931),
+('./six/six2.ygo', 1921),
+('./twelve/twelve3.ygo', 1762),
+('./three/three5.ygo', 1650),
+('./nine/nine7.ygo', 1541),
+('./five/five1.ygo', 1531),
+('./seven/seven8.ygo', 1427),
+('./ten/ten3.ygo', 1382),
+('./five/five8.ygo', 1363),
+('./eight/eight7.ygo', 1347),
+('./three/three2.ygo', 1347),
+('./nine/nine4.ygo', 1328),
+('./six/six3.ygo', 1222),
+('./seven/seven7.ygo', 1074),
+('./four/four1.ygo', 1024),
+('./two/two5.ygo', 755)]
+
+
+round1 25, 25
+
+[('./ten/ten2.ygo', 5582),
+('./nine/nine5.ygo', 5544),
+('./eight/eight5.ygo', 5526),
+('./eleven/eleven2.ygo', 5463),
+('./nine/nine2.ygo', 5456),
+('./nine/nine1.ygo', 5372),
+('./seven/seven2.ygo', 5288),
+('./eight/eight1.ygo', 5224), #made it here but not in last round
+('./five/five5.ygo', 5133),
+('./eleven/eleven3.ygo', 5109), #made it here, but not in last round
+('./ten/ten4.ygo', 5075),
+('./nine/nine3.ygo', 5067),
+('./six/six2.ygo', 5045),
+('./eight/eight2.ygo', 4991),
+('./ten/ten5.ygo', 4989),
+('./ten/ten7.ygo', 4978),
+('./five/five3.ygo', 4972),
+('./eight/eight3.ygo', 4938),
+('./eleven/eleven5.ygo', 4922),
+('./six/six3.ygo', 4861),
+('./four/four2.ygo', 4811),
+('./five/five2.ygo', 4805),
+('./nine/nine8.ygo', 4755),
+('./three/three5.ygo', 4752),
+('./seven/seven3.ygo', 4724),
+('./ten/ten1.ygo', 4710),
+('./twelve/twelve1.ygo', 4675),
+('./eight/eight7.ygo', 4668),
+('./seven/seven5.ygo', 4664),
+('./eleven/eleven1.ygo', 4641),
+('./seven/seven7.ygo', 4624),
+('./seven/seven8.ygo', 4612),
+('./nine/nine4.ygo', 4606),
+('./seven/seven1.ygo', 4594),
+('./ten/ten3.ygo', 4525),
+('./three/three2.ygo', 4515),
+('./twelve/twelve3.ygo', 4506),
+('./four/four1.ygo', 4502),
+('./four/four5.ygo', 4497),
+('./two/two5.ygo', 4494),
+('./five/five8.ygo', 4433),
+('./nine/nine7.ygo', 4418),
+('./six/six5.ygo', 4417),
+('./five/five1.ygo', 4413),
+
+('./eight/eight8.ygo', 4376),
+('./ten/ten6.ygo', 4367),
+('./nine/nine6.ygo', 4281),
+('./three/three3.ygo', 4278),
+('./three/three7.ygo', 4253),
+('./five/five7.ygo', 4252),
+('./one/one2.ygo', 4243),
+('./eight/eight4.ygo', 4230),
+('./six/six7.ygo', 4195),
+('./two/two2.ygo', 4135),
+('./eight/eight6.ygo', 4106),
+('./six/six6.ygo', 4069),
+('./four/four3.ygo', 4059),
+('./eleven/eleven4.ygo', 4047),
+('./four/four8.ygo', 4037),
+('./six/six1.ygo', 4033),
+('./three/three8.ygo', 4020),
+('./seven/seven4.ygo', 4009),
+('./twelve/twelve2.ygo', 3999),
+('./four/four7.ygo', 3941),
+('./five/five6.ygo', 3897),
+('./six/six8.ygo', 3863),
+('./four/four4.ygo', 3811),
+('./five/five4.ygo', 3760),
+('./three/three1.ygo', 3690),
+('./seven/seven6.ygo', 3635),
+('./four/four6.ygo', 3509),
+('./two/two1.ygo', 3498),
+('./six/six4.ygo', 3458),
+('./two/two7.ygo', 3405),
+('./one/one1.ygo', 3383),
+('./two/two3.ygo', 3382),
+('./three/three4.ygo', 3372),
+('./one/one7.ygo', 3362),
+('./one/one5.ygo', 3254),
+('./two/two8.ygo', 3253),
+('./three/three6.ygo', 3233),
+('./one/one8.ygo', 3138),
+('./one/one6.ygo', 2980),
+('./two/two6.ygo', 2971),
+('./one/one3.ygo', 2950),
+('./two/two4.ygo', 2936), 
+('./one/one4.ygo', 2534)]
+
+This hand failed to combo.
+set rotation
+Blank
+Crusadia Reclusia
+waterfront
+black dragon
+test hand
+
+This hand failed to combo.
+quik launch
+terraforming
+Blank
+world legacy guardragon
+black dragon
+
+ravine
+set rotation
+Blank
+thrasher
+Crusadia Leonis
+
+Crusadia Draco
+Crusadia Draco
+terraforming
+black dragon
+waterfront
+
+defaultdict(<class 'int'>, {'./nine/nine1.ygo': 2, './four/four2.ygo': 1, './eleven/eleven2.ygo': 9, './eight/eight2.ygo': 5, './eight/eight1.ygo': 1, './nine/nine8.ygo': 4, './eight/eight3.ygo': 3, './six/six5.ygo': 1, './ten/ten5.ygo': 1, './ten/ten2.ygo': 7, './three/three2.ygo': 2, './eight/eight5.ygo': 5, './ten/ten4.ygo': 9, './twelve/twelve1.ygo': 3, './ten/ten1.ygo': 2, './five/five5.ygo': 1, './nine/nine5.ygo': 6, './nine/nine2.ygo': 4, './five/five3.ygo': 2, './six/six7.ygo': 2, './three/three5.ygo': 1, './five/five7.ygo': 3, './ten/ten7.ygo': 1, './seven/seven2.ygo': 1, './seven/seven3.ygo': 2, './four/four5.ygo': 1, './four/four7.ygo': 1, './four/four3.ygo': 1, './nine/nine3.ygo': 3, './eight/eight8.ygo': 1, './six/six8.ygo': 1, './five/five6.ygo': 1, './five/five2.ygo': 2, './six/six2.ygo': 1, './two/two7.ygo': 1, './seven/seven6.ygo': 1, './nine/nine7.ygo': 1, './seven/seven5.ygo': 3, './twelve/twelve2.ygo': 1, './eleven/eleven5.ygo': 2, './eight/eight4.ygo': 1})
+it took -2777.287198781967
+
+defaultdict(<class 'int'>, {'./five/five8.ygo': 1, './eight/eight5.ygo': 7, './ten/ten2.ygo': 6, './three/three5.ygo': 2, './ten/ten4.ygo': 9, './ten/ten1.ygo': 2, './seven/seven5.ygo': 5, './nine/nine6.ygo': 1, './seven/seven2.ygo': 1, './twelve/twelve3.ygo': 1, './eight/eight2.ygo': 2, './eight/eight3.ygo': 6, './eleven/eleven2.ygo': 5, './six/six3.ygo': 2, './nine/nine8.ygo': 3, './nine/nine5.ygo': 6, './ten/ten3.ygo': 1, './three/three2.ygo': 1, './ten/ten7.ygo': 1, './six/six5.ygo': 5, './four/four5.ygo': 2, './five/five2.ygo': 4, './five/five5.ygo': 4, './five/five3.ygo': 2, './four/four2.ygo': 1, './six/six2.ygo': 1, './nine/nine3.ygo': 4, './twelve/twelve1.ygo': 2, './four/four8.ygo': 1, './ten/ten6.ygo': 1, './two/two2.ygo': 1, './eleven/eleven5.ygo': 3, './seven/seven6.ygo': 1, './two/two5.ygo': 1, './eight/eight4.ygo': 1, './ten/ten5.ygo': 1, './eight/eight6.ygo': 1, './nine/nine2.ygo': 1, './nine/nine1.ygo': 1})
+it took -3376.153265476227
+
+{'nine5.ygo': 20, 'ten4.ygo': 20, 'eleven2.ygo': 17, 'ten2.ygo': 18, 'seven5.ygo': 3, 'five5.ygo': 2, 'nine3.ygo': 8, 'eight5.ygo': 6, 'ten7.ygo': 1, 'nine2.ygo': 1, 'twelve1.ygo': 1, 'seven2.ygo': 1, 'eight3.ygo': 1, 'eleven5.ygo': 1})
+it took -16003.00021481514
+
+best score was eight5.ygo with a score of 13.530445544554459 and had a 99% confidence interval of 12.300806034941987 - 14.76008505416693
+defaultdict(<class 'int'>, {'eight5.ygo': 17, 'nine5.ygo': 25, 'ten2.ygo': 16, 'eleven2.ygo': 9, 'ten4.ygo': 23, 'nine3.ygo': 6, 'five5.ygo': 2, 'seven5.ygo': 2})
+it took -4637.22304224968
+
+m;1;Crusadia Reclusia;3;spellcaster;fire
+m;1;Ranryu;4;dragon;wind
+s;1;terraforming;normal
+m;1;REDMD;10;dragon;dark
+s;1;waterfront;field
+m;3;Crusadia Draco;3;dragon;wind
+m;3;Crusadia Maximus;3;psychic;light
+m;3;Crusadia Leonis;3;beast;earth
+m;3;Crusadia Arboria;3;warrior;water
+m;2;Crusadia Reclusia;3;spellcaster;fire
+m;2;Ranryu;4;dragon;wind
+m;1;Jigabyte;4;reptile;water
+-m;1;nefarious;4;beast;dark
+-m;1;inari fire;4;pyro;fire
+m;1;destrudo;7;dragon;dark
+m;1;black dragon;4;dragon;dark
+m;1;white dragon;4;dragon;light
+m;2;rokket tracer;4;dragon;dark
+m;1;thrasher;4;warrior;light
+s;2;waterfront;field
+s;1;ravine;field
+s;3;quik launch;quickplay
+s;1;rota;normal
+s;1;monster reborn;normal
+s;1;world legacy succession;normal
+s;1;world legacy guardragon;continous
+s;1;set rotation;quickplay
+b;2
