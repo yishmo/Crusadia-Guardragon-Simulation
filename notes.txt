@@ -3,6 +3,18 @@
                                                89.0%combo, 76.6%waterfront, 
                                                88.9%combo, 75.7%waterfront.
 
+result
+[('./nine/nine5.ygo', 53), ('./ten/ten4.ygo', 47)]
+
+round 5 200, 200
+
+[('./nine/nine5.ygo', 348),
+('./ten/ten4.ygo', 347),
+BREAKPOINT
+('./ten/ten2.ygo', 266),
+('./eleven/eleven2.ygo', 205),
+('./eight/eight5.ygo', 178),
+('./nine/nine3.ygo', 156)]
 round 4 200, 200
 
 [('./nine/nine5.ygo', 754),
@@ -11,7 +23,7 @@ round 4 200, 200
 ('./eleven/eleven2.ygo', 581),
 ('./nine/nine3.ygo', 573),
 ('./eight/eight5.ygo', 567),
-
+BREAKPOINT
 ('./nine/nine2.ygo', 397),
 ('./seven/seven5.ygo', 364),
 ('./five/five5.ygo', 350),
@@ -30,7 +42,7 @@ round 3 100, 100
 ('./nine/nine2.ygo', 1117),
 ('./eight/eight3.ygo', 1085),
 ('./five/five5.ygo', 1068),
-
+BREAKPOINT
 ('./eight/eight2.ygo', 1018),
 ('./ten/ten1.ygo', 931),
 ('./seven/seven2.ygo', 782),
@@ -66,7 +78,7 @@ round 2 50, 50
 ('./ten/ten7.ygo', 2259),
 ('./four/four5.ygo', 2230),
 ('./nine/nine8.ygo', 2203),
-
+BREAKPOINT
 ('./ten/ten5.ygo', 2189),
 ('./four/four2.ygo', 2102),
 ('./seven/seven3.ygo', 2068),
@@ -100,9 +112,9 @@ round1 25, 25
 ('./nine/nine2.ygo', 5456),
 ('./nine/nine1.ygo', 5372),
 ('./seven/seven2.ygo', 5288),
-('./eight/eight1.ygo', 5224), #made it here but not in last round
+('./eight/eight1.ygo', 5224), 
 ('./five/five5.ygo', 5133),
-('./eleven/eleven3.ygo', 5109), #made it here, but not in last round
+('./eleven/eleven3.ygo', 5109), 
 ('./ten/ten4.ygo', 5075),
 ('./nine/nine3.ygo', 5067),
 ('./six/six2.ygo', 5045),
@@ -137,7 +149,7 @@ round1 25, 25
 ('./nine/nine7.ygo', 4418),
 ('./six/six5.ygo', 4417),
 ('./five/five1.ygo', 4413),
-
+BREAKPOINT
 ('./eight/eight8.ygo', 4376),
 ('./ten/ten6.ygo', 4367),
 ('./nine/nine6.ygo', 4281),
