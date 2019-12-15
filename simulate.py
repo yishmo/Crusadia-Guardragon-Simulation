@@ -620,7 +620,12 @@ def main():
 
     start = time.time()
 
-    if sys.argv[1] == 'file':
+
+    if len(sys.argv) == 1 or sys.argv[1] == 'help':
+        print('USAGE MESSAGE')
+        print('python simulate.py file [path/to/file] [# of test hands]')
+
+    elif sys.argv[1] == 'file':
         if len(sys.argv) == 2: #default file/params
             run_simulation(DECK_FILE_NAME)
         elif len(sys.argv) == 3: #custom file/default params
@@ -666,6 +671,7 @@ def main():
         print('Mean for', deck2, 'was', mean2, 'lower bound', lowerBound2, 'upper bound', upperBound2)
 
         print('Separation was', lowerBound1 - upperBound2)
+
                 
             
     end = time.time()
