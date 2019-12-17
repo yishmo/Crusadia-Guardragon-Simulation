@@ -2,6 +2,7 @@ import random
 import itertools
 import ygodeck
 import ygocard
+import cardnames as cn
 import sys
 import math
 import time
@@ -14,6 +15,24 @@ DECK_FILE_NAME = 'CG.ygo'
 
 
 
+COMBO_POINTS = 9
+WATERFRONT_POINTS = 4.5
+AZATHOT_POINTS = 3
+
+CASE2 = COMBO_POINTS
+CASE3 = COMBO_POINTS + AZATHOT_POINTS
+CASE4 = COMBO_POINTS + WATERFRONT_POINTS
+CASE5 = COMBO_POINTS + AZATHOT_POINTS + WATERFRONT_POINTS
+#no need for case 1 since it is always worth 0
+
+usedTerraforming = False #a boolean to keep track if you used terraforming
+
+debug = False
+dontShuffle = False
+
+hand = []
+deck = []
+graveyard = []
 
 
 #this variable is the list you use to rank decks:
@@ -106,25 +125,6 @@ ALL_DECK_NAMES = [('./ten/ten2.ygo', 5582),
                 ('./one/one4.ygo', 2534)]
                 
 
-COMBO_POINTS = 9
-WATERFRONT_POINTS = 4.5
-AZATHOT_POINTS = 3
-
-CASE2 = COMBO_POINTS
-CASE3 = COMBO_POINTS + AZATHOT_POINTS
-CASE4 = COMBO_POINTS + WATERFRONT_POINTS
-CASE5 = COMBO_POINTS + AZATHOT_POINTS + WATERFRONT_POINTS
-#no need for case 1 since it is always worth 0
-
-usedTerraforming = False #a boolean to keep track if you used terraforming
-
-debug = False
-dontShuffle = False
-
-hand = []
-deck = []
-graveyard = []
-
 
 
 def can_combo():
@@ -133,7 +133,7 @@ def can_combo():
     firstCrusadia = None
     foundIndex = None
     for i in range(len(hand)):
-        if 'Crusadia' in hand[i].name or 'rota' == hand[i].name:
+        if 'CRUSADIA' in hand[i].name or cn.ROTA_STR == hand[i].name:
             firstCrusadia = hand[i]
             foundIndex = i #keep track of this so we don't count this as an extender
             break
@@ -147,45 +147,45 @@ def can_combo():
     return check_for_ravine_plays()
 
 def isExtender(card, firstCrusadia):
-    if 'Crusadia' in card.name:
-        if firstCrusadia.name == 'Crusadia Draco' and card.name == 'Crusadia Draco':
+    if 'CRUSADIA' in card.name:
+        if firstCrusadia.name == cn.CRU_DRA_STR and card.name == cn.CRU_DRA_STR:
             #black dragon and destrudo are actually exceptions to this rule
             #since you can use magius in the graveyard
             #otherwise the algorithm will just find the other normal extender
-            if inHand('destrudo') or inHand('black dragon'):
+            if inHand(cn.DESTRUDO_STR) or inHand(cn.BLACK_DRA_STR):
                 return True
 
         else:
             return True
         
 
-    elif 'Ranryu' == card.name or 'rota' == card.name or 'world legacy succession' == card.name or 'monster reborn' == card.name or 'inari fire' == card.name or 'Jigabyte' == card.name or 'nefarious' == card.name:
+    elif cn.RANRYU_STR == card.name or cn.ROTA_STR == card.name or cn.WLS_STR == card.name or cn.REBORN_STR == card.name or cn.INARI_STR == card.name or cn.JIGABYTE_STR == card.name or cn.NEFARIOUS_STR == card.name:
         return True
-    elif 'quik launch' == card.name:
-        if inDeck('rokket tracer'):
+    elif cn.QUICK_STR == card.name:
+        if inDeck(cn.ROKKET_STR):
             return True
-    elif 'black dragon' == card.name:
-        if firstCrusadia.name == 'Crusadia Maximus' or inHand('thrasher'):
+    elif cn.BLACK_DRA_STR == card.name:
+        if firstCrusadia.name == cn.CRU_MAX_STR or inHand(cn.THRASHER_STR):
             return True
 
-    elif 'destrudo' == card.name and inHand('thrasher'):
+    elif cn.DESTRUDO_STR == card.name and inHand(cn.THRASHER_STR):
         return True
 
-    elif ('terraforming' == card.name or 'ravine' == card.name) and inHand('thrasher'): #set rotation work later
+    elif (cn.TERRA_STR == card.name or cn.RAVINE_STR == card.name) and inHand(cn.THRASHER_STR): #set rotation work later
         return True
 
-    elif 'world legacy guardragon' == card.name:
-        if firstCrusadia.name == 'Crusadia Draco':
+    elif cn.WLG_STR == card.name:
+        if firstCrusadia.name == cn.CRU_DRA_STR:
             return True
 
     return False
 
 def isUnconditionalExtender(card):
-    if ('Ranryu' == card.name or 'world legacy guardragon' == card.name or 'world legacy succession' == card.name 
-        or 'monster reborn' == card.name or 'inari fire' == card.name or 'Jigabyte' == card.name or 'nefarious' == card.name):
+    if (cn.RANRYU_STR == card.name or cn.WLG_STR == card.name or cn.WLS_STR == card.name 
+        or cn.REBORN_STR == card.name or cn.INARI_STR == card.name or cn.JIGABYTE_STR == card.name or cn.NEFARIOUS_STR == card.name):
         return True
-    elif 'quik launch' == card.name:
-        if inDeck('rokket tracer'):
+    elif cn.QUICK_STR == card.name:
+        if inDeck(cn.ROKKET_STR):
             return True
 
     return False
@@ -193,13 +193,13 @@ def isUnconditionalExtender(card):
 def can_make_azathot_helper(testHand):
     global grave
     for i in range(len(testHand)):
-        if 'Crusadia' in testHand[i].name:
+        if 'CRUSADIA' in testHand[i].name:
             grave.append(testHand[i])
             del testHand[i]#we can delete because these are copies
             break
         
-        elif 'rota' == testHand[i].name:
-            grave.append(ygocard.MonsterCard('Crusadia Arboria', '3', 'warrior', 'water'))
+        elif cn.ROTA_STR == testHand[i].name:
+            grave.append(ygocard.MonsterCard(cn.CRU_ARB_STR, '3', 'warrior', 'water'))
             del testHand[i]
             break
 
@@ -211,7 +211,7 @@ def can_make_azathot(fourCardHand):
     graveUsed = False
     for card in fourCardHand:
         
-        if 'Crusadia Draco' == card.name:
+        if cn.CRU_DRA_STR == card.name:
             if firstMaterial is None:
                 cond1 = False
                 cond2 = False
@@ -225,7 +225,7 @@ def can_make_azathot(fourCardHand):
 
             else:
                 return False 
-        elif 'Ranryu' == card.name or 'Jigabyte' == card.name or 'thrasher' == card.name or 'inari fire' == card.name or 'nefarious' == card.name:
+        elif cn.RANRYU_STR == card.name or cn.JIGABYTE_STR == card.name or cn.THRASHER_STR == card.name or cn.INARI_STR == card.name or cn.NEFARIOUS_STR == card.name:
             if firstMaterial is None:
                 firstMaterial = card
             elif firstMaterial.name == card.name:
@@ -233,61 +233,61 @@ def can_make_azathot(fourCardHand):
             else:
                 return True
 
-        elif 'rota' == card.name and inDeck('thrasher'):
+        elif cn.ROTA_STR == card.name and inDeck(cn.THRASHER_STR):
             if firstMaterial is None:
                 firstMaterial = card
             else:
                 return True
 
-        elif 'Monster Reborn' == card.name and levelInGrave('4') and not graveUsed:
+        elif cn.REBORN_STR == card.name and levelInGrave('4') and not graveUsed:
             if firstMaterial is None:
                 firstMaterial = card
                 graveUsed = True
             else:
                 return True
                 
-        elif 'world legacy succession' == card.name and levelInGrave('4') and not zoneOccupied and not graveUsed:
+        elif cn.WLS_STR == card.name and levelInGrave('4') and not zoneOccupied and not graveUsed:
             if firstMaterial is None:
                 firstMaterial = card
                 graveUsed = True
             else:
                 return True
 
-        elif 'world legacy guardragon' == card.name and inGrave('Crusadia Draco') and not graveUsed:
+        elif cn.WLG_STR == card.name and inGrave(cn.CRU_DRA_STR) and not graveUsed:
             if firstMaterial is None:
                 firstMaterial = card
                 graveUsed = True
             else:
                 return True
             
-        elif 'Crusadia Maximus' == card.name and not zoneOccupied:
+        elif cn.CRU_MAX_STR == card.name and not zoneOccupied:
             if firstMaterial is None:
                 firstMaterial = card
             else:
                 return True
 
-        elif 'destrudo' == card.name and levelInGrave('3'):
+        elif cn.DESTRUDO_STR == card.name and levelInGrave('3'):
             if firstMaterial is None:
                 firstMaterial = card
             else:
                 return True
 
-        elif ('ravine' == card.name or ('terraforming' == card.name and inHand('waterfront'))) and levelInGrave('3') and inDeck('destrudo'):
+        elif (cn.RAVINE_STR == card.name or (cn.TERRA_STR == card.name and inHand(cn.WATERFRONT_STR))) and levelInGrave('3') and inDeck(cn.DESTRUDO_STR):
             if firstMaterial is None:
                 firstMaterial = card
             else:
                 return True
 
-        elif 'black dragon'== card.name and attributeInGrave('light'):
+        elif cn.BLACK_DRA_STR== card.name and attributeInGrave('light'):
             if firstMaterial is None:
                 firstMaterial = card
             else:
                 return True
 
-        elif 'quik launch' == card.name and inDeck('rokket tracer'):
+        elif cn.QUICK_STR == card.name and inDeck(cn.ROKKET_STR):
             if firstMaterial is None:
                 firstMaterial = card
-                deckToGrave('rokket tracer')
+                deckToGrave(cn.ROKKET_STR)
             else:
                 return True
 
@@ -299,26 +299,26 @@ def check_for_ravine_plays():
     #you could be desparate, in which case a dragon ravine/terraforming + a revival spell works
     #**let's assume you dump draco every time so that it works with WLGuardragon, even though
     #this is a slight simplification
-    if inHand('ravine') and (inHand('monster reborn') or inHand('world legacy guardragon') or inHand('world legacy succession')):
-        if inHand('monster reborn'):
-            revivalIndex = indexInHand('monster reborn')
-        elif inHand('world legacy guardragon'):
-            revivalIndex = indexInHand('world legacy guardragon')
+    if inHand(cn.RAVINE_STR) and (inHand(cn.REBORN_STR) or inHand(cn.WLG_STR) or inHand(cn.WLS_STR)):
+        if inHand(cn.REBORN_STR):
+            revivalIndex = indexInHand(cn.REBORN_STR)
+        elif inHand(cn.WLG_STR):
+            revivalIndex = indexInHand(cn.WLG_STR)
         else:
-            revivalIndex = indexInHand('world legacy succession')
+            revivalIndex = indexInHand(cn.WLS_STR)
 
         for i in range(len(hand)):
             if isUnconditionalExtender(hand[i]) and i != revivalIndex:
                 return True
         
-    elif inHand('terraforming') and inDeck('ravine') and (inHand('monster reborn') or inHand('world legacy guardragon') or inHand('world legacy succession')):
+    elif inHand(cn.TERRA_STR) and inDeck(cn.RAVINE_STR) and (inHand(cn.REBORN_STR) or inHand(cn.WLG_STR) or inHand(cn.WLS_STR)):
         usedTerraforming = True
-        if inHand('monster reborn'):
-            revivalIndex = indexInHand('monster reborn')
-        elif inHand('world legacy guardragon'):
-            revivalIndex = indexInHand('world legacy guardragon')
+        if inHand(cn.REBORN_STR):
+            revivalIndex = indexInHand(cn.REBORN_STR)
+        elif inHand(cn.WLG_STR):
+            revivalIndex = indexInHand(cn.WLG_STR)
         else:
-            revivalIndex = indexInHand('world legacy succession')
+            revivalIndex = indexInHand(cn.WLS_STR)
 
         for i in range(len(hand)):
             if isUnconditionalExtender(hand[i]) and i != revivalIndex:
@@ -329,28 +329,28 @@ def check_for_ravine_plays():
 #a special kind of extender. If you use draco for azathot you need to be able to 
 #ss a dragon at the end to do saryuja combo:
 def isDracoExtender(card):
-    if (card.name == 'white dragon' or card.name == 'black dragon' or card.name == 'Ranryu' or
-        card.name == 'monster reborn' or card.name == 'world legacy succession' or 
-        card.name == 'world legacy guardragon' or (card.name == 'quick launch' and 
-        inDeck('rokket tracer')) or 'destrudo' == card.name and levelInGrave('3') or 
-        ('ravine' == card.name or ('terraforming' == card.name and inHand('waterfront'))) #*this is only applicable if you value waterfront more than azathot
-        and levelInGrave('3') and inDeck('destrudo')):
+    if (card.name == cn.WHITE_DRA_STR or card.name == cn.BLACK_DRA_STR or card.name == cn.RANRYU_STR or
+        card.name == cn.REBORN_STR or card.name == cn.WLS_STR or 
+        card.name == cn.WLG_STR or (card.name == cn.QUICK_STR and 
+        inDeck(cn.ROKKET_STR)) or cn.DESTRUDO_STR == card.name and levelInGrave('3') or 
+        (cn.RAVINE_STR == card.name or (cn.TERRA_STR == card.name and inHand(cn.WATERFRONT_STR))) #*this is only applicable if you value waterfront more than azathot
+        and levelInGrave('3') and inDeck(cn.DESTRUDO_STR)):
         
         return True
     return False
 
 def isAzathotExtender(card, zoneOccupied = False):
             
-        if (('Ranryu' == card.name or 'Jigabyte' == card.name or 'thrasher' == card.name or 'inari fire' == card.name or 'nefarious' == card.name)
-            or ('rota' == card.name and inDeck('thrasher'))
-            or ('Monster Reborn' == card.name and levelInGrave('4'))
-            or ('world legacy succession' == card.name and levelInGrave('4') and not zoneOccupied)
-            or ('world legacy guardragon' == card.name and inGrave('Crusadia Draco'))
-            or ('Crusadia Maximus' == card.name and not zoneOccupied)
-            or ('destrudo' == card.name and levelInGrave('3'))
-            or (('ravine' == card.name or ('terraforming' == card.name and inHand('waterfront'))) and levelInGrave('3') and inDeck('destrudo'))
-            or ('black dragon'== card.name and attributeInGrave('light'))
-            or('quik launch' == card.name and inDeck('rokket tracer'))):
+        if ((cn.RANRYU_STR == card.name or cn.JIGABYTE_STR == card.name or cn.THRASHER_STR == card.name or cn.INARI_STR == card.name or cn.NEFARIOUS_STR == card.name)
+            or (cn.ROTA_STR == card.name and inDeck(cn.THRASHER_STR))
+            or (cn.REBORN_STR == card.name and levelInGrave('4'))
+            or (cn.WLS_STR == card.name and levelInGrave('4') and not zoneOccupied)
+            or (cn.WLG_STR == card.name and inGrave(cn.CRU_DRA_STR))
+            or (cn.CRU_MAX_STR == card.name and not zoneOccupied)
+            or (cn.DESTRUDO_STR == card.name and levelInGrave('3'))
+            or ((cn.RAVINE_STR == card.name or (cn.TERRA_STR == card.name and inHand(cn.WATERFRONT_STR))) and levelInGrave('3') and inDeck(cn.DESTRUDO_STR))
+            or (cn.BLACK_DRA_STR== card.name and attributeInGrave('light'))
+            or(cn.QUICK_STR == card.name and inDeck(cn.ROKKET_STR))):
 
             return True
 
@@ -432,39 +432,39 @@ def indexInHand(name):
 
 def contains_waterfront():
     for c in hand:
-        if c.name == 'waterfront' or c.name == 'terraforming' or (c.name == 'set rotation' and inDeck('ravine')):
+        if c.name == cn.WATERFRONT_STR or c.name == cn.TERRA_STR or (c.name == cn.SET_ROTATION_STR and inDeck(cn.RAVINE_STR)):
             return True
 
     #well we tried an easy check, now lets remove
     #draco and REDMD(or destrudo if we already have it)
     #from our decks to check for
 
-    if inDeck('REDMD'):
-        deckToGrave('REDMD')
-        graveToDeck('REDMD')#puts on bottom of deck so we don't draw it
+    if inDeck(cn.REDMD_STR):
+        deckToGrave(cn.REDMD_STR)
+        graveToDeck(cn.REDMD_STR)#puts on bottom of deck so we don't draw it
     else:
-        if inDeck('destrudo'):
-            deckToGrave('destrudo')
-            graveToDeck('destrudo')#puts on bottom of deck so we don't draw it
+        if inDeck(cn.DESTRUDO_STR):
+            deckToGrave(cn.DESTRUDO_STR)
+            graveToDeck(cn.DESTRUDO_STR)#puts on bottom of deck so we don't draw it
 
-    if inDeck('Crusadia Draco'):
-        deckToGrave('Crusadia Draco')
-        graveToDeck('Crusadia Draco')#puts on bottom of deck so we don't draw it
+    if inDeck(cn.CRU_DRA_STR):
+        deckToGrave(cn.CRU_DRA_STR)
+        graveToDeck(cn.CRU_DRA_STR)#puts on bottom of deck so we don't draw it
 
     firstNine = list(hand + deck[0:4])
 
     for card in firstNine:
-        if (card.type == 'dragon' and card.name != 'redmd') or card.name == 'quik launch' or isRevivalSpell(card):
+        if (card.type == 'dragon' and card.name != cn.REDMD_STR) or card.name == cn.QUICK_STR or isRevivalSpell(card):
             #well then we get to see 13 cards
             for card in deck[0:8]:
-                if card.name == 'waterfront' or card.name == 'terraforming' or (card.name == 'set rotation' and inDeck('ravine')):
+                if card.name == cn.WATERFRONT_STR or card.name == cn.TERRA_STR or (card.name == cn.SET_ROTATION_STR and inDeck(cn.RAVINE_STR)):
                     return True 
             return False
 
     return False
 
 def isRevivalSpell(card):
-    return card.name == 'monster reborn' or card.name == 'world legacy guardragon' or card.name == 'world legacy succession'
+    return card.name == cn.REBORN_STR or card.name == cn.WLG_STR or card.name == cn.WLS_STR
         
         
 
