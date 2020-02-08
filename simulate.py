@@ -431,7 +431,8 @@ def indexInHand(name):
     raise AttributeError(name, 'was not in hand')
 
 def contains_waterfront():
-    for c in hand:
+    firstNine = list(hand + deck[0:4])
+    for c in firstNine:
         if c.name == cn.WATERFRONT_STR or c.name == cn.TERRA_STR or (c.name == cn.SET_ROTATION_STR and inDeck(cn.RAVINE_STR)):
             return True
 
@@ -451,15 +452,13 @@ def contains_waterfront():
         deckToGrave(cn.CRU_DRA_STR)
         graveToDeck(cn.CRU_DRA_STR)#puts on bottom of deck so we don't draw it
 
-    firstNine = list(hand + deck[0:4])
 
     for card in firstNine:
         if (card.type == 'dragon' and card.name != cn.REDMD_STR) or card.name == cn.QUICK_STR or isRevivalSpell(card):
-            #well then we get to see 13 cards
-            for card in deck[0:8]:
+            #well then we get to see an extra 4 cards
+            for card in deck[4:8]:
                 if card.name == cn.WATERFRONT_STR or card.name == cn.TERRA_STR or (card.name == cn.SET_ROTATION_STR and inDeck(cn.RAVINE_STR)):
                     return True 
-            return False
 
     return False
 

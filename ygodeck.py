@@ -29,32 +29,35 @@ allowedCards = {cn.CRU_MAX_STR,
 
 def deck_from_file(file):
     deck = []
-    for line in file:
-        data = line.rstrip().split(';')
-        if data[0] == 'm':
-            data[2] = data[2].upper()
-            assert data[2] in allowedCards
-            for i in range(int(data[1])):
-                deck.append(ygocard.MonsterCard(*data[2:]))
+    try:
+        for line in file:
+            data = line.rstrip().split(';')
+            if data[0] == 'm':
+                data[2] = data[2].upper()
+                assert data[2] in allowedCards
+                for i in range(int(data[1])):
+                    deck.append(ygocard.MonsterCard(*data[2:]))
 
-        elif data[0] == 's':
-            data[2] = data[2].upper()
-            assert data[2] in allowedCards
-            for i in range(int(data[1])):
-                deck.append(ygocard.SpellCard(*data[2:]))
+            elif data[0] == 's':
+                data[2] = data[2].upper()
+                assert data[2] in allowedCards
+                for i in range(int(data[1])):
+                    deck.append(ygocard.SpellCard(*data[2:]))
 
-        elif data[0] == 't':
-            data[2] = data[2].upper()
-            assert data[2] in allowedCards
-            for i in range(int(data[1])):
-                deck.append(ygocard.TrapCard(*data[2:]))
-        elif data[0] == 'b': #blank
-            for i in range(int(data[1])):
-                deck.append(ygocard.Blank())
-        else:#igore
-            #print('ignored some cards')
-            pass
-
+            elif data[0] == 't':
+                data[2] = data[2].upper()
+                assert data[2] in allowedCards
+                for i in range(int(data[1])):
+                    deck.append(ygocard.TrapCard(*data[2:]))
+            elif data[0] == 'b': #blank
+                for i in range(int(data[1])):
+                    deck.append(ygocard.Blank())
+            else:#igore
+                #print('ignored some cards')
+                pass
+    except AssertionError:
+        print(f'{data[2]} is not a supported card name.')
+        exit()
 
     return deck
 

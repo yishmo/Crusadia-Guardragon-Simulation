@@ -4,23 +4,22 @@ m;3;Crusadia Leonis;3;beast;earth
 m;3;Crusadia Arboria;3;warrior;water
 m;3;Crusadia Reclusia;3;spellcaster;fire
 m;3;Ranryu;4;dragon;wind
-m;3;Jigabyte;4;reptile;water
-m;3;nefarious archfiend eater of nefariousness;4;beast;dark
-m;3;inari fire;4;pyro;fire
+m;1;Jigabyte;4;reptile;water
+m;1;nefarious archfiend eater of nefariousness;4;beast;dark
+m;1;inari fire;4;pyro;fire
 m;1;destrudo the lost dragon's frission;7;dragon;dark
 m;1;black dragon collapserpent;4;dragon;dark
 m;1;white dragon wyverbuster;4;dragon;light
 m;1;rokket tracer;4;dragon;dark
+m;1;photon thrasher;4;warrior;light
 m;1;Red-eyes darkness metal dragon;10;dragon;dark
 s;3;kyoutou waterfront;field
+s;1;dragon ravine;field
 s;1;terraforming;normal
 s;3;quick launch;quickplay
 s;1;reinforcement of the army;normal
 s;1;monster reborn;normal
 s;1;world legacy succession;normal
 s;1;world legacy guardragon;continous
--s;1;set rotation;quickplay
--s;1;dragon ravine;field
--m;1;photon thrasher;4;warrior;light
--m;1;rokket tracer;4;dragon;dark
+s;1;set rotation;quickplay
 b;2
